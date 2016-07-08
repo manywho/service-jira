@@ -1,0 +1,7 @@
+{
+  "name": "ManyWho JIRA Service",
+  "description": "A plugin that allows your ManyWho Flows to integrate with JIRA",
+  "repository": "https://github.com/manywho/service-jira",
+  "logo": "https://s3.amazonaws.com/manywho-service-assets/icons/service-jira.png",
+  "keywords": ["manywho", "jira", "plugin", "workflow"]
+}
