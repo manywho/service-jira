@@ -7,6 +7,7 @@ import javax.ws.rs.ApplicationPath;
 @ApplicationPath("/")
 public class Service extends ServiceApplication {
     public Service() {
+        this.setModule(new ServiceModule());
         this.initialize();
     }
 
