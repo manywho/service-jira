@@ -14,6 +14,6 @@ public class Service extends ServiceApplication {
     public static void main(String[] args) throws Exception {
         Service service = new Service();
         service.setModule(new ServiceModule());
-        service.startServer();
+        service.startServer("/api/jira/2");
     }
 }
