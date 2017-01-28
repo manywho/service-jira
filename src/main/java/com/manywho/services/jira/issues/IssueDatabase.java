@@ -2,12 +2,12 @@ package com.manywho.services.jira.issues;
 
 import com.manywho.sdk.api.run.elements.type.ListFilter;
 import com.manywho.sdk.services.database.Database;
-import com.manywho.services.jira.ServiceConfiguration;
+import com.manywho.services.jira.ApplicationConfiguration;
 
 import javax.inject.Inject;
 import java.util.List;
 
-public class IssueDatabase implements Database<ServiceConfiguration, Issue> {
+public class IssueDatabase implements Database<ApplicationConfiguration, Issue> {
     private final IssueManager issueManager;
 
     @Inject
@@ -15,35 +15,35 @@ public class IssueDatabase implements Database<ServiceConfiguration, Issue> {
         this.issueManager = issueManager;
     }
 
-    public Issue create(ServiceConfiguration configuration, Issue issue) {
+    public Issue create(ApplicationConfiguration configuration, Issue issue) {
         return null;
     }
 
-    public List<Issue> create(ServiceConfiguration configuration, List<Issue> list) {
+    public List<Issue> create(ApplicationConfiguration configuration, List<Issue> list) {
         return null;
     }
 
-    public void delete(ServiceConfiguration configuration, Issue issue) {
+    public void delete(ApplicationConfiguration configuration, Issue issue) {
 
     }
 
-    public void delete(ServiceConfiguration configuration, List<Issue> list) {
+    public void delete(ApplicationConfiguration configuration, List<Issue> list) {
 
     }
 
-    public Issue update(ServiceConfiguration configuration, Issue issue) {
+    public Issue update(ApplicationConfiguration configuration, Issue issue) {
         return null;
     }
 
-    public List<Issue> update(ServiceConfiguration configuration, List<Issue> list) {
+    public List<Issue> update(ApplicationConfiguration configuration, List<Issue> list) {
         return null;
     }
 
-    public Issue find(ServiceConfiguration configuration, String s) {
+    public Issue find(ApplicationConfiguration configuration, String s) {
         return null;
     }
 
-    public List<Issue> findAll(ServiceConfiguration configuration, ListFilter listFilter) {
+    public List<Issue> findAll(ApplicationConfiguration configuration, ListFilter listFilter) {
         return issueManager.findAll(configuration, listFilter);
     }
 }

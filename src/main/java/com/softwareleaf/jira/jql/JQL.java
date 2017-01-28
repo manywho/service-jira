@@ -1,7 +1,5 @@
 package com.softwareleaf.jira.jql;
 
-import org.apache.commons.lang3.StringUtils;
-
 /**
  * Provides a DSL for generating JQL.
  * <p/>
@@ -48,8 +46,8 @@ public class JQL {
     public String build() {
         String jql = sb.toString();
 
-        jql = StringUtils.removeEnd(jql, " AND ");
-        jql = StringUtils.removeEnd(jql, " OR ");
+        jql = removeEnd(jql, " AND ");
+        jql = removeEnd(jql, " OR ");
 
         return jql;
     }
@@ -58,4 +56,11 @@ public class JQL {
         return new JQLField(new JQL());
     }
 
+    private static String removeEnd(String string, String remove) {
+        if (string.endsWith(remove)) {
+            return string.substring(0, string.length() - remove.length());
+        }
+
+        return string;
+    }
 }

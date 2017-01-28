@@ -3,7 +3,7 @@ package com.manywho.services.jira.issues;
 import com.atlassian.jira.rest.client.api.domain.SearchResult;
 import com.manywho.sdk.api.run.elements.type.ListFilter;
 import com.manywho.sdk.services.utils.Streams;
-import com.manywho.services.jira.ServiceConfiguration;
+import com.manywho.services.jira.ApplicationConfiguration;
 import com.manywho.services.jira.factories.JiraClientFactory;
 import com.manywho.services.jira.types.IssueType;
 import com.manywho.services.jira.types.Status;
@@ -21,7 +21,7 @@ public class IssueManager {
         this.clientFactory = clientFactory;
     }
 
-    public List<Issue> findAll(ServiceConfiguration configuration, ListFilter listFilter) {
+    public List<Issue> findAll(ApplicationConfiguration configuration, ListFilter listFilter) {
         JQL jql = IssueSearch.createJqlFromListFilter(listFilter);
 
         SearchResult result = clientFactory.create(configuration)
