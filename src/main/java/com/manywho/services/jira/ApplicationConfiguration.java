@@ -14,6 +14,12 @@ public class ApplicationConfiguration implements Configuration {
     @Configuration.Setting(name = "Password", contentType = ContentType.Password)
     private String password;
 
+    @Configuration.Setting(name = "Consumer Key", contentType = ContentType.String)
+    private String consumerKey;
+
+    @Configuration.Setting(name = "Consumer Secret", contentType = ContentType.Password)
+    private String consumerSecret;
+
     public String getUrl() {
         return url;
     }
@@ -24,5 +30,13 @@ public class ApplicationConfiguration implements Configuration {
 
     public String getPassword() {
         return password;
+    }
+
+    public String getConsumerKey() {
+        return consumerKey;
+    }
+
+    public String getConsumerSecret() {
+        return consumerSecret;
     }
 }

@@ -5,7 +5,7 @@ import com.manywho.sdk.api.run.elements.type.ListFilter;
 import com.manywho.sdk.services.database.Database;
 import com.manywho.sdk.services.utils.Streams;
 import com.manywho.services.jira.ApplicationConfiguration;
-import com.manywho.services.jira.factories.JiraClientFactory;
+import com.manywho.services.jira.jira.JiraClientFactory;
 import com.manywho.services.jira.types.Project;
 
 import javax.inject.Inject;

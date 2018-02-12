@@ -4,7 +4,7 @@ import com.atlassian.jira.rest.client.api.domain.SearchResult;
 import com.manywho.sdk.api.run.elements.type.ListFilter;
 import com.manywho.sdk.services.utils.Streams;
 import com.manywho.services.jira.ApplicationConfiguration;
-import com.manywho.services.jira.factories.JiraClientFactory;
+import com.manywho.services.jira.jira.JiraClientFactory;
 import com.manywho.services.jira.types.IssueType;
 import com.manywho.services.jira.types.Status;
 import com.softwareleaf.jira.jql.JQL;
