@@ -26,6 +26,13 @@
 
     <dependencies>
         <dependency>
+            <!--This dependency has been added because jira-client is depending on two different versions of apache httpclient
+            This dependency will be removed when jira-client is updated to have only one version of apache httpclient-->
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.2</version>
+        </dependency>
+        <dependency>
             <groupId>com.manywho.sdk</groupId>
             <artifactId>sdk-server-servlet3</artifactId>
             <version>2.0.0-beta-03</version>
