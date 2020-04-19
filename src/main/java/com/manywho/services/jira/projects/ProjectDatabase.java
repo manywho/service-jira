@@ -1,8 +1,11 @@
 package com.manywho.services.jira.projects;
 
 import com.atlassian.jira.rest.client.api.domain.BasicProject;
+import com.manywho.sdk.api.draw.content.Command;
 import com.manywho.sdk.api.run.elements.type.ListFilter;
-import com.manywho.sdk.services.database.Database;
+import com.manywho.sdk.api.run.elements.type.MObject;
+import com.manywho.sdk.api.run.elements.type.ObjectDataType;
+import com.manywho.sdk.services.database.ReadOnlyDatabase;
 import com.manywho.sdk.services.utils.Streams;
 import com.manywho.services.jira.ApplicationConfiguration;
 import com.manywho.services.jira.jira.JiraClientFactory;
@@ -12,7 +15,7 @@ import javax.inject.Inject;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class ProjectDatabase implements Database<ApplicationConfiguration, Project> {
+public class ProjectDatabase implements ReadOnlyDatabase<ApplicationConfiguration, Project> {
     private final JiraClientFactory clientFactory;
 
     @Inject
@@ -21,42 +24,12 @@ public class ProjectDatabase implements Database<ApplicationConfiguration, Proje
     }
 
     @Override
-    public Project create(ApplicationConfiguration configuration, Project project) {
+    public Project find(ApplicationConfiguration configuration, ObjectDataType objectDataType, Command command, String id) {
         return null;
     }
 
     @Override
-    public List<Project> create(ApplicationConfiguration configuration, List<Project> list) {
-        return null;
-    }
-
-    @Override
-    public void delete(ApplicationConfiguration configuration, Project project) {
-
-    }
-
-    @Override
-    public void delete(ApplicationConfiguration configuration, List<Project> list) {
-
-    }
-
-    @Override
-    public Project update(ApplicationConfiguration configuration, Project project) {
-        return null;
-    }
-
-    @Override
-    public List<Project> update(ApplicationConfiguration configuration, List<Project> list) {
-        return null;
-    }
-
-    @Override
-    public Project find(ApplicationConfiguration configuration, String s) {
-        return null;
-    }
-
-    @Override
-    public List<Project> findAll(ApplicationConfiguration configuration, ListFilter listFilter) {
+    public List<Project> findAll(ApplicationConfiguration configuration, ObjectDataType objectDataType, Command command, ListFilter filter, List<MObject> objects) {
         Iterable<BasicProject> projects = clientFactory.create(configuration)
                 .getProjectClient()
                 .getAllProjects()

@@ -18,6 +18,6 @@ public class Application extends Servlet3Server {
         EmbeddedServer server = new UndertowServer();
         server.setApplication(Application.class);
         server.addModule(new ApplicationModule());
-        server.start("/api/jira/2");
+        server.start();
     }
 }

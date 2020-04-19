@@ -1,13 +1,16 @@
 package com.manywho.services.jira.issues;
 
+import com.manywho.sdk.api.draw.content.Command;
 import com.manywho.sdk.api.run.elements.type.ListFilter;
-import com.manywho.sdk.services.database.Database;
+import com.manywho.sdk.api.run.elements.type.MObject;
+import com.manywho.sdk.api.run.elements.type.ObjectDataType;
+import com.manywho.sdk.services.database.ReadOnlyDatabase;
 import com.manywho.services.jira.ApplicationConfiguration;
 
 import javax.inject.Inject;
 import java.util.List;
 
-public class IssueDatabase implements Database<ApplicationConfiguration, Issue> {
+public class IssueDatabase implements ReadOnlyDatabase<ApplicationConfiguration, Issue> {
     private final IssueManager issueManager;
 
     @Inject
@@ -15,35 +18,13 @@ public class IssueDatabase implements Database<ApplicationConfiguration, Issue> 
         this.issueManager = issueManager;
     }
 
-    public Issue create(ApplicationConfiguration configuration, Issue issue) {
+    @Override
+    public Issue find(ApplicationConfiguration configuration, ObjectDataType objectDataType, Command command, String id) {
         return null;
     }
 
-    public List<Issue> create(ApplicationConfiguration configuration, List<Issue> list) {
-        return null;
-    }
-
-    public void delete(ApplicationConfiguration configuration, Issue issue) {
-
-    }
-
-    public void delete(ApplicationConfiguration configuration, List<Issue> list) {
-
-    }
-
-    public Issue update(ApplicationConfiguration configuration, Issue issue) {
-        return null;
-    }
-
-    public List<Issue> update(ApplicationConfiguration configuration, List<Issue> list) {
-        return null;
-    }
-
-    public Issue find(ApplicationConfiguration configuration, String s) {
-        return null;
-    }
-
-    public List<Issue> findAll(ApplicationConfiguration configuration, ListFilter listFilter) {
-        return issueManager.findAll(configuration, listFilter);
+    @Override
+    public List<Issue> findAll(ApplicationConfiguration configuration, ObjectDataType objectDataType, Command command, ListFilter filter, List<MObject> objects) {
+        return issueManager.findAll(configuration, filter);
     }
 }
