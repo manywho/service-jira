@@ -50,7 +50,7 @@
         <dependency>
             <groupId>com.github.scribejava</groupId>
             <artifactId>scribejava-core</artifactId>
-            <version>4.2.0</version>
+            <version>7.0.0</version>
         </dependency>
         <dependency>
             <groupId>redis.clients</groupId>
