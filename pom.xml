@@ -60,7 +60,7 @@
         <dependency>
             <groupId>com.atlassian.jira</groupId>
             <artifactId>jira-rest-java-client-core</artifactId>
-            <version>5.0.4</version>
+            <version>5.2.2</version>
             <exclusions>
                 <exclusion>
                     <groupId>com.google.guava</groupId>
